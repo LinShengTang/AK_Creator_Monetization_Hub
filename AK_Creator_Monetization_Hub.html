@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AK Creator Monetization Hub v0.1</title>
+  <style>
+    :root{
+      --bg:#0f172a;--panel:#111827;--card:#182235;--card2:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--line:#334155;
+      --accent:#38bdf8;--accent2:#a78bfa;--good:#22c55e;--warn:#f59e0b;--pink:#fb7185;
+      --radius:18px;--shadow:0 18px 45px rgba(0,0,0,.28)
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter,"Noto Sans TC","Microsoft JhengHei",Arial,sans-serif;background:linear-gradient(135deg,#07111f,#111827 42%,#1e1b4b);color:var(--text);line-height:1.65}
+    a{color:inherit;text-decoration:none}.wrap{max-width:1180px;margin:0 auto;padding:28px 18px 60px}.hero{padding:34px 26px;border:1px solid rgba(148,163,184,.22);border-radius:28px;background:radial-gradient(circle at 20% 20%,rgba(56,189,248,.18),transparent 35%),radial-gradient(circle at 85% 30%,rgba(167,139,250,.16),transparent 38%),rgba(15,23,42,.78);box-shadow:var(--shadow);margin-bottom:22px}.badge{display:inline-flex;gap:8px;align-items:center;border:1px solid rgba(56,189,248,.35);color:#bae6fd;background:rgba(14,165,233,.1);padding:6px 10px;border-radius:999px;font-size:13px}.hero h1{font-size:clamp(30px,5vw,56px);line-height:1.08;margin:14px 0 12px;letter-spacing:-.04em}.hero p{max-width:850px;color:#cbd5e1;font-size:18px;margin:0}.note{margin-top:18px;padding:14px 16px;border-left:4px solid var(--accent);background:rgba(56,189,248,.08);border-radius:14px;color:#dbeafe}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.section{margin-top:26px}.section h2{font-size:24px;margin:0 0 10px}.section .sub{color:var(--muted);margin:0 0 14px}.card{grid-column:span 6;background:rgba(24,34,53,.86);border:1px solid rgba(148,163,184,.18);border-radius:var(--radius);padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.18)}.card.full{grid-column:span 12}.card.third{grid-column:span 4}.card h3{margin:0 0 8px;font-size:20px}.tagrow{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}.tag{font-size:12px;color:#cbd5e1;border:1px solid rgba(148,163,184,.25);background:rgba(15,23,42,.4);padding:4px 8px;border-radius:999px}.status{font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid rgba(34,197,94,.4);color:#bbf7d0;background:rgba(34,197,94,.1)}.soon{border-color:rgba(245,158,11,.42);color:#fde68a;background:rgba(245,158,11,.1)}.adv{border-color:rgba(167,139,250,.42);color:#ddd6fe;background:rgba(167,139,250,.1)}.muted{color:var(--muted)}.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(56,189,248,.38);background:rgba(14,165,233,.13);color:#e0f2fe;padding:9px 12px;border-radius:12px;font-weight:700;font-size:14px}.btn.secondary{border-color:rgba(148,163,184,.28);background:rgba(15,23,42,.5);color:#cbd5e1}.btn.disabled{opacity:.45;pointer-events:none}.flow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.step{padding:8px 10px;border:1px solid rgba(148,163,184,.2);border-radius:12px;background:rgba(15,23,42,.5);font-size:13px}.arrow{color:var(--accent);align-self:center}.toolbox{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.mini{padding:14px;border-radius:16px;border:1px solid rgba(148,163,184,.18);background:rgba(11,18,32,.65)}.mini h4{margin:0 0 6px}.quick{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.q{padding:14px;border-radius:16px;background:rgba(15,23,42,.62);border:1px solid rgba(148,163,184,.18)}.q strong{color:#f8fafc}.links small{display:block;color:var(--muted);margin-top:6px}.footer{margin-top:36px;color:var(--muted);font-size:13px;border-top:1px solid rgba(148,163,184,.18);padding-top:18px}details{border:1px solid rgba(148,163,184,.18);border-radius:16px;background:rgba(11,18,32,.5);padding:12px 14px;margin-top:10px}summary{cursor:pointer;font-weight:800;color:#e2e8f0}ul{padding-left:20px;margin:8px 0}.warnbox{border-left:4px solid var(--warn);background:rgba(245,158,11,.08);padding:12px 14px;border-radius:14px}.pink{color:#fecdd3}.cyan{color:#bae6fd}.purple{color:#ddd6fe}@media(max-width:820px){.card,.card.third{grid-column:span 12}.toolbox,.quick{grid-template-columns:1fr}.hero{padding:24px 18px}.flow{display:block}.step{margin:6px 0}.arrow{display:none}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="badge">AK Creator Monetization Hub｜v0.1</span>
+      <h1>從題材、Hook、CTA、平台審計，到發布後數據回收的內容作戰入口</h1>
+      <p>這不是爆款保證工具，而是一套降低內容犯錯率、提高內容命中率的工作流：先讓對的人停下來，再讓內容兌現承諾，最後用數據決定下一支影片該怎麼修。</p>
+      <div class="note"><strong>目前已完成核心模組：</strong>Algorithm / CTA / Performance / Hook。其餘核心章節與進階漏斗模組會持續加入。</div>
+    </section>
+
+    <section class="section">
+      <h2>我現在卡在哪？先從這裡選</h2>
+      <p class="sub">不用從頭讀教材，先選你的問題，再進對應工具。</p>
+      <div class="quick">
+        <div class="q"><strong>開頭沒人停下來</strong><br><span class="muted">用 Hook Manual 檢查前三秒、受眾篩選、Clickbait 風險。</span></div>
+        <div class="q"><strong>看完不知道怎麼引導</strong><br><span class="muted">用 CTA Manual 設計安全 CTA，避免留言 +1、按讚解鎖等風險。</span></div>
+        <div class="q"><strong>發出去不知道怎麼看數據</strong><br><span class="muted">用 Performance Manual 的數據診斷器，判斷是 Hook、Script、CTA 還是受眾錯位。</span></div>
+        <div class="q"><strong>怕把平台規則講錯</strong><br><span class="muted">用 Algorithm Manual / Database 確認哪些是 official，哪些只是實務推論。</span></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>工作流總圖</h2>
+      <p class="sub">Screenwriter 負責策略、腳本與審計；v6.5 負責生成執行與 History。</p>
+      <div class="card full">
+        <div class="flow">
+          <span class="step">Radar / Plan</span><span class="arrow">→</span>
+          <span class="step">Brief</span><span class="arrow">→</span>
+          <span class="step">Hook Check</span><span class="arrow">→</span>
+          <span class="step">Script</span><span class="arrow">→</span>
+          <span class="step">CTA Safety</span><span class="arrow">→</span>
+          <span class="step">Algorithm Audit</span><span class="arrow">→</span>
+          <span class="step">ShotPackage / JSON</span><span class="arrow">→</span>
+          <span class="step">v6.5 Generate</span><span class="arrow">→</span>
+          <span class="step">Publish</span><span class="arrow">→</span>
+          <span class="step">Performance Review</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>已完成核心模組</h2>
+      <p class="sub">這四章已完成手冊與工具欄位整合，可直接使用。</p>
+      <div class="grid">
+        <article class="card">
+          <span class="status">Completed</span>
+          <h3>Hook｜讓對的人停下來</h3>
+          <p class="muted">解決前三秒、受眾篩選、內容承諾與 Clickbait 邊界。主要用在 Screenwriter 的 Hook Check 與 Script 開頭。</p>
+          <div class="tagrow"><span class="tag">前三秒</span><span class="tag">Stop Rate</span><span class="tag">Clickbait Guard</span></div>
+          <div class="btns">
+            <a class="btn" href="https://linshengtang.github.io/AK_Hook_Master/AK_Hook_Manual.html" target="_blank">開啟 Hook Manual</a>
+            <a class="btn secondary" href="#tools">查看 Screenwriter 工具入口</a>
+          </div>
+        </article>
+        <article class="card">
+          <span class="status">Completed</span>
+          <h3>CTA｜讓看完的人知道下一步</h3>
+          <p class="muted">建立安全 CTA 四類、禁用語防呆、Hook → CTA 對齊，以及 CTA → DM → Offer 鏈路。</p>
+          <div class="tagrow"><span class="tag">CTA Safety</span><span class="tag">DM Trigger</span><span class="tag">Engagement Bait Guard</span></div>
+          <div class="btns">
+            <a class="btn" href="https://linshengtang.github.io/AK_CTA_Master/AK_CTA_Manual.html" target="_blank">開啟 CTA Manual</a>
+            <a class="btn secondary" href="#tools">查看 Screenwriter 工具入口</a>
+          </div>
+        </article>
+        <article class="card">
+          <span class="status">Completed</span>
+          <h3>Performance｜發出去後知道怎麼修</h3>
+          <p class="muted">用數據診斷器把 CTR、Retention、Viewers、DM Count 轉成下一支影片的修改決策。</p>
+          <div class="tagrow"><span class="tag">數據診斷器</span><span class="tag">history_tracking v1.2</span><span class="tag">Meta 2026</span></div>
+          <div class="btns">
+            <a class="btn" href="https://linshengtang.github.io/AK_Performance_Master/AK_Performance_Manual.html" target="_blank">開啟 Performance Manual</a>
+            <a class="btn secondary" href="#tools">查看 v6.5 工具入口</a>
+          </div>
+        </article>
+        <article class="card">
+          <span class="status">Completed</span>
+          <h3>Algorithm｜避免踩平台與演算法誤區</h3>
+          <p class="muted">區分 official、high_confidence、practical_inference，避免把平台功能、實務推論寫成官方加權。</p>
+          <div class="tagrow"><span class="tag">source_claim_level</span><span class="tag">Algorithm Claim Audit</span><span class="tag">Paid / Organic</span></div>
+          <div class="btns">
+            <a class="btn" href="https://linshengtang.github.io/AK_Algorithm/AK_Algorithm_Manual.html" target="_blank">開啟 Algorithm Manual</a>
+            <a class="btn secondary" href="#tools">查看審計工具入口</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="tools">
+      <h2>工具入口</h2>
+      <p class="sub">目前工具分工：Screenwriter 做策略、腳本、審計；v6.5 做生成與 History。下方按鈕會另開新分頁；Hub 不會自動把資料帶入工具，實際內容仍需在 Screenwriter / v6.5 內匯入或填寫。</p>
+      <div class="toolbox">
+        <div class="mini">
+          <h4>GPT_Prompt_Pro Screenwriter Lab</h4>
+          <p class="muted">Plan Workspace、Brief、Hook Check、CTA Safety、Algorithm Audit、Storyboard、ShotPackage / AK Algorithm JSON Export。</p>
+          <div class="btns"><a class="btn" href="https://linshengtang.github.io/GPT_Prompt_Pro_Screenwriter_Lab/GPT_Prompt_Pro_Screenwriter_Lab.html" target="_blank" rel="noopener noreferrer">開啟 Screenwriter</a></div>
+        </div>
+        <div class="mini">
+          <h4>GPT_Prompt_Pro System v6.5</h4>
+          <p class="muted">Builder、Image / Video 生成、Workflow A / B、Library、History Tracking、Screenwriter JSON / AK Algorithm JSON 匯入。</p>
+          <div class="btns"><a class="btn" href="https://linshengtang.github.io/gpt-prompt-pro/GPT_Prompt_Pro_System_v6_5.html" target="_blank" rel="noopener noreferrer">開啟 v6.5</a></div>
+        </div>
+      </div>
+      <div class="warnbox" style="margin-top:14px"><strong>提示：</strong>如果工具網址尚未上傳到對應 repo，先用你 GitHub Pages 實際路徑替換本區連結。</div>
+    </section>
+
+    <section class="section">
+      <h2>建構中核心教材</h2>
+      <p class="sub">先完成 v7 原始 10 章，再補進階漏斗模組。</p>
+      <div class="grid">
+        <div class="card third"><span class="status soon">Coming soon</span><h3>Script</h3><p class="muted">Hook 後的第一段如何接住承諾，避免前段留存斷崖。</p></div>
+        <div class="card third"><span class="status soon">Coming soon</span><h3>Stories</h3><p class="muted">信任電池、日常接觸、關係加溫與多觸點承接。</p></div>
+        <div class="card third"><span class="status soon">Coming soon</span><h3>Strategy</h3><p class="muted">內容方向、受眾定位、內容組合與 7-11-4 的正確使用。</p></div>
+        <div class="card third"><span class="status soon">Coming soon</span><h3>Signal</h3><p class="muted">題材訊號、搜尋詞、競品、趨勢與內容切入角度。</p></div>
+        <div class="card third"><span class="status soon">Coming soon</span><h3>Conversion</h3><p class="muted">DM、Offer、5 No's、信任、異議處理與成交前置。</p></div>
+        <div class="card third"><span class="status soon">Coming soon</span><h3>Execution</h3><p class="muted">週期化執行、回顧、任務拆解、紀錄與迭代節奏。</p></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Advanced Roadmap｜10 章完成後補強</h2>
+      <p class="sub">Gemini 指出的四個變現漏斗系統級斷層，先納入 Roadmap，不打斷 10 章主線。</p>
+      <div class="grid">
+        <article class="card">
+          <span class="status adv">Advanced</span>
+          <h3>Visual Stop Engine｜視覺截停引擎</h3>
+          <p class="muted">補強第一幀、前 0.5 秒、畫面突變、動態字幕、主體非預期動作。未來會連到 v6.5 first-frame prompt。</p>
+        </article>
+        <article class="card">
+          <span class="status adv">Advanced</span>
+          <h3>Profile Conversion Protocol｜主頁轉化架構</h3>
+          <p class="muted">補強 Bio、置頂三件套、LFA 入口與 Profile Visits → DM / Link Click 的二次審查漏斗。</p>
+        </article>
+        <article class="card">
+          <span class="status adv">Advanced</span>
+          <h3>Non-linear DM Objection Handling｜非線性 DM 拆彈</h3>
+          <p class="muted">補強已讀不回、嫌貴、我再想想、現在沒時間等真實對話分歧。</p>
+        </article>
+        <article class="card">
+          <span class="status adv">Advanced</span>
+          <h3>Backend Value Ladder｜後端價值梯隊</h3>
+          <p class="muted">補強 LFA 後第 3 / 7 / 14 天追蹤、核心服務、高客單諮詢與陪跑升級路徑。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>內部規格與擴充說明</h2>
+      <div class="card full">
+        <details open>
+          <summary>Hub 會如何持續擴充？</summary>
+          <ul>
+            <li>每完成一章，就加入對應 Manual、Master Spec 與工具欄位對接說明。</li>
+            <li>未完成章節維持 Coming soon，不做假功能。</li>
+            <li>10 章完成後，再開 Advanced Roadmap 四大漏斗補強。</li>
+          </ul>
+        </details>
+        <details>
+          <summary>使用者應該怎麼看這個 Hub？</summary>
+          <ul>
+            <li>新手：先從「我現在卡在哪」選工具。</li>
+            <li>正在寫腳本：進 Screenwriter，依序檢查 Hook / CTA / Algorithm。</li>
+            <li>已發布內容：進 Performance Manual，用數據診斷器看下一支怎麼修。</li>
+            <li>工具維護者：看 Master Spec 與欄位對接規格。</li>
+          </ul>
+        </details>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>AK Creator Monetization Hub v0.1｜定位：內容作戰入口，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
+    </footer>
+  </main>
+</body>
+</html>
