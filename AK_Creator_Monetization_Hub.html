@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AK Creator Monetization Hub v0.1.4.4</title>
+  <title>AK Creator Monetization Hub v0.1.5</title>
   <style>
     :root{
       --bg:#0f172a;--panel:#111827;--card:#182235;--card2:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--line:#334155;
@@ -17,10 +17,10 @@
 <body>
   <main class="wrap">
     <section class="hero">
-      <span class="badge">AK Creator Monetization Hub｜v0.1</span>
+      <span class="badge">AK Creator Monetization Hub｜v0.1.5</span>
       <h1>從題材、Hook、CTA、平台審計，到發布後數據回收的內容作戰入口</h1>
       <p>這不是爆款保證工具，而是一套降低內容犯錯率、提高內容命中率的工作流：先讓對的人停下來，再讓內容兌現承諾，最後用數據決定下一支影片該怎麼修。</p>
-      <div class="note"><strong>目前已完成核心模組：</strong>Algorithm / CTA / Performance / Hook。其餘核心章節與進階漏斗模組會持續加入。</div>
+      <div class="note"><strong>目前已完成核心模組：</strong>Hook / Script / CTA / Algorithm / Performance。<br>目前採三工具獨立架構：Hub 負責入口與教材導航；Screenwriter Pro 負責上游企劃與 ShotPackage；v6.5 Execution Core 負責下游生成與 Execution Result。</div>
     </section>
 
     <section class="section">
@@ -36,7 +36,7 @@
 
     <section class="section">
       <h2>工作流總圖</h2>
-      <p class="sub">Screenwriter 負責策略、腳本與審計；v6.5 負責生成執行與 History。</p>
+      <p class="sub">Screenwriter Pro 負責上游企劃、審稿、分鏡與 ShotPackage；v6.5 Execution Core 負責下游生成、Shot Queue、History 與 Execution Result。</p>
       <div class="card full">
         <div class="flow">
           <span class="step">Radar / Plan</span><span class="arrow">→</span>
@@ -45,11 +45,36 @@
           <span class="step">Script</span><span class="arrow">→</span>
           <span class="step">CTA Safety</span><span class="arrow">→</span>
           <span class="step">Algorithm Audit</span><span class="arrow">→</span>
-          <span class="step">ShotPackage / JSON</span><span class="arrow">→</span>
-          <span class="step">v6.5 Generate</span><span class="arrow">→</span>
+          <span class="step">ShotPackage Export</span><span class="arrow">→</span>
+          <span class="step">v6.5 Import</span><span class="arrow">→</span>
+          <span class="step">Shot Queue</span><span class="arrow">→</span>
+          <span class="step">Image / Video Generate</span><span class="arrow">→</span>
+          <span class="step">Execution Result</span><span class="arrow">→</span>
           <span class="step">Publish</span><span class="arrow">→</span>
           <span class="step">Performance Review</span>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>三工具資料流｜目前正式主線</h2>
+      <p class="sub">本 Hub 不自動帶資料；真正資料流由 Screenwriter Pro 匯出 ShotPackage，再由 v6.5 Execution Core 匯入與生成。</p>
+      <div class="grid">
+        <article class="card third">
+          <span class="status">Layer 1</span>
+          <h3>Hub｜入口與教材導航</h3>
+          <p class="muted">負責使用情境導引、教材入口、工具上下游說明與模組狀態。不放外部 repo 名稱，不承擔生成執行。</p>
+        </article>
+        <article class="card third">
+          <span class="status">Layer 2</span>
+          <h3>Screenwriter Pro｜ShotPackage</h3>
+          <p class="muted">負責上游企劃、審稿、分鏡、Reference Plan 與 Character / Scene / Asset Lite，輸出 <code>GPT_Prompt_Pro_ShotPackage.json</code>。</p>
+        </article>
+        <article class="card third">
+          <span class="status">Layer 3</span>
+          <h3>v6.5 Execution Core｜Execution Result</h3>
+          <p class="muted">負責匯入 ShotPackage、逐鏡生成、Image Compare、Workflow B、History，輸出 <code>GPT_Prompt_Pro_ExecutionResult.json</code>。</p>
+        </article>
       </div>
     </section>
 
@@ -113,20 +138,22 @@
 
     <section class="section" id="tools">
       <h2>工具入口</h2>
-      <p class="sub">目前工具分工：Screenwriter 做策略、腳本、審計；v6.5 做生成與 History。</p>
+      <p class="sub">目前工具分工：Screenwriter Pro 做上游企劃與 ShotPackage；v6.5 Execution Core 做下游生成與 Execution Result；Performance 回收結果做下一輪診斷。</p>
       <div class="toolbox">
         <div class="mini">
-          <h4>GPT_Prompt_Pro Screenwriter Lab</h4>
-          <p class="muted">Plan Workspace、Brief、Hook Check、CTA Safety、Algorithm Audit、Storyboard、ShotPackage / AK Algorithm JSON Export。</p>
-          <div class="btns"><a class="btn" href="https://linshengtang.github.io/GPT_Prompt_Pro_Screenwriter_Lab/GPT_Prompt_Pro_Screenwriter_Lab.html" target="_blank">開啟 Screenwriter</a></div>
+          <h4>Screenwriter Pro｜上游企劃與 ShotPackage</h4>
+          <p class="muted">Brief、題材來源、可做版本、Hook / Script / CTA / Algorithm 審計、雙 AI 審稿、Director Plan、Storyboard、Reference Plan、Character / Scene / Asset Lite、ShotPackage Export。</p>
+          <div class="tagrow"><span class="tag">GPT_Prompt_Pro_ShotPackage.json</span><span class="tag">上游企劃</span><span class="tag">分鏡輸出</span></div>
+          <div class="btns"><a class="btn" href="https://linshengtang.github.io/GPT_Prompt_Pro_Screenwriter_Lab/GPT_Prompt_Pro_Screenwriter_Lab.html" target="_blank">開啟 Screenwriter Pro</a></div>
         </div>
         <div class="mini">
-          <h4>GPT_Prompt_Pro System v6.5</h4>
-          <p class="muted">Builder、Image / Video 生成、Workflow A / B、Library、History Tracking、Screenwriter JSON / AK Algorithm JSON 匯入。</p>
-          <div class="btns"><a class="btn" href="https://linshengtang.github.io/gpt-prompt-pro/GPT_Prompt_Pro_System_v6_5.html" target="_blank">開啟 v6.5</a></div>
+          <h4>v6.5 Execution Core｜下游生成與 Execution Result</h4>
+          <p class="muted">ShotPackage Import、Shot Queue、Builder、Image Compare A/B/C、Workflow A / B、Library、Prompt Master、API JSON、History、Execution Result Export。</p>
+          <div class="tagrow"><span class="tag">ShotPackage Import</span><span class="tag">GPT_Prompt_Pro_ExecutionResult.json</span><span class="tag">下游生成</span></div>
+          <div class="btns"><a class="btn" href="https://linshengtang.github.io/gpt-prompt-pro/GPT_Prompt_Pro_System_v6_5.html" target="_blank">開啟 v6.5 Execution Core</a></div>
         </div>
       </div>
-      <div class="warnbox" style="margin-top:14px"><strong>提示：</strong>如果工具網址尚未上傳到對應 repo，先用你 GitHub Pages 實際路徑替換本區連結。</div>
+      <div class="warnbox" style="margin-top:14px"><strong>橋接規則：</strong>Screenwriter Pro 匯出 <code>GPT_Prompt_Pro_ShotPackage.json</code>；v6.5 匯入 ShotPackage 後逐鏡生成，完成後匯出 <code>GPT_Prompt_Pro_ExecutionResult.json</code>；Performance / 教材工具再回收結果與發布數據做診斷。</div>
     </section>
 
     <section class="section">
@@ -148,7 +175,7 @@
         <article class="card">
           <span class="status adv">Advanced</span>
           <h3>Visual Stop Engine｜視覺截停引擎</h3>
-          <p class="muted">補強第一幀、前 0.5 秒、畫面突變、動態字幕、主體非預期動作。未來會連到 v6.5 first-frame prompt。</p>
+          <p class="muted">補強第一幀、前 0.5 秒、畫面突變、動態字幕、主體非預期動作。未來會連到 Screenwriter Reference Plan 與 v6.5 Builder / Workflow B。</p>
         </article>
         <article class="card">
           <span class="status adv">Advanced</span>
@@ -183,8 +210,8 @@
           <summary>使用者應該怎麼看這個 Hub？</summary>
           <ul>
             <li>新手：先從「我現在卡在哪」選工具。</li>
-            <li>正在寫腳本：進 Screenwriter，依序檢查 Hook / CTA / Algorithm。</li>
-            <li>已發布內容：進 Performance Manual，用數據診斷器看下一支怎麼修。</li>
+            <li>正在寫腳本：進 Screenwriter Pro，依序檢查 Hook / Script / CTA / Algorithm，必要時輸出 ShotPackage。</li>
+            <li>已發布內容：進 Performance Manual，結合 v6.5 Execution Result 與平台發布數據，判斷下一支怎麼修。</li>
             <li>工具維護者：看 Master Spec 與欄位對接規格。</li>
           </ul>
         </details>
@@ -192,7 +219,7 @@
     </section>
 
     <footer class="footer">
-      <p>AK Creator Monetization Hub v0.1.4｜定位：內容作戰入口，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
+      <p>AK Creator Monetization Hub v0.1.5｜定位：內容作戰入口與三工具導航，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
     </footer>
   </main>
 </body>
