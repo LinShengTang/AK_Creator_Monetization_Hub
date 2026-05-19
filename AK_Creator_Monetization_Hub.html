@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AK Creator Monetization Hub v0.1.9</title>
+  <title>AK Creator Monetization Hub v0.2.0</title>
   <style>
     :root{
       --bg:#0f172a;--panel:#111827;--card:#182235;--card2:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--line:#334155;
@@ -62,17 +62,97 @@
 }
 </style>
 
+
+<style>
+.learning-order-v020{
+  margin:32px 0;
+  padding:24px;
+  border-radius:24px;
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(148,163,184,.32);
+  box-shadow:0 18px 44px rgba(15,23,42,.13);
+}
+.learning-order-v020 .section-head{margin-bottom:16px}
+.learning-order-v020 .eyebrow{
+  margin:0 0 4px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#2563eb;
+}
+.learning-order-v020 h2{
+  margin:0 0 8px;
+  font-size:28px;
+  letter-spacing:-.04em;
+}
+.learning-order-v020 .section-head p:not(.eyebrow){
+  margin:0;
+  color:#64748b;
+  line-height:1.8;
+}
+.order-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+}
+.order-card{
+  display:block;
+  text-decoration:none;
+  color:#172033;
+  background:#f8fafc;
+  border:1px solid #d8dee9;
+  border-radius:18px;
+  padding:16px;
+  transition:.18s ease;
+}
+.order-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 28px rgba(37,99,235,.14);
+  border-color:#93c5fd;
+}
+.order-card.step-1{
+  grid-column:1 / -1;
+  background:linear-gradient(135deg,#dbeafe,#eef2ff);
+  border-left:6px solid #2563eb;
+}
+.step-no{
+  display:inline-block;
+  font-weight:900;
+  font-size:12px;
+  color:#fff;
+  background:#2563eb;
+  border-radius:999px;
+  padding:2px 9px;
+  margin-bottom:8px;
+}
+.order-card h3{
+  margin:0 0 8px;
+  font-size:18px;
+}
+.order-card p{
+  margin:0;
+  color:#64748b;
+  line-height:1.75;
+  font-size:14px;
+}
+@media(max-width:840px){
+  .order-grid{grid-template-columns:1fr}
+  .order-card.step-1{grid-column:auto}
+}
+</style>
+
 </head>
 <body>
   <main class="wrap">
     <section class="hero">
-      <span class="badge">AK Creator Monetization Hub｜v0.1.9</span>
+      <span class="badge">AK Creator Monetization Hub｜v0.2.0</span>
       <h1>從題材、Hook、CTA、平台審計，到發布後數據回收的內容作戰入口</h1>
       <p>這不是爆款保證工具，而是一套降低內容犯錯率、提高內容命中率的工作流：先讓對的人停下來，再讓內容兌現承諾，最後用數據決定下一支影片該怎麼修。</p>
-      <div class="note"><strong>目前已完成核心模組：</strong>Hook / Script / CTA / Stories / Strategy / Algorithm / Performance。<br>目前採三工具獨立架構：Hub 負責入口與教材導航；Screenwriter Pro 負責上游企劃與 ShotPackage；v6.5 Execution Core 負責下游生成與 Execution Result。</div>
+      <div class="note"><strong>目前已完成核心模組：</strong>Strategy / Strategy / Hook / Script / CTA / Stories / Algorithm / Performance。<br>目前採三工具獨立架構：Hub 負責入口與教材導航；Screenwriter Pro 負責上游企劃與 ShotPackage；v6.5 Execution Core 負責下游生成與 Execution Result。</div>
     </section>
 
-<!-- Hub v0.1.9 Strategy Module -->
+<!-- Hub v0.2.0 Strategy Module -->
 <div class="module-card completed strategy-module">
   <h3>Strategy｜定位 / 受眾 / 內容主線 / 轉化路徑</h3>
   <p>在開始做 Hook、Script、CTA 之前，先決定你服務誰、用什麼角度進入、用哪些內容主線建立信任，並導向哪條低壓力變現路徑。</p>
@@ -91,6 +171,55 @@
         <div class="q"><strong>怕把平台規則講錯</strong><br><span class="muted">用 Algorithm Manual / Database 確認哪些是 official，哪些只是實務推論。</span></div>
       </div>
     </section>
+
+<!-- Hub v0.2.0 Learning Order Sync -->
+<section class="learning-order-v020">
+  <div class="section-head">
+    <p class="eyebrow">Recommended Learning Order</p>
+    <h2>建議使用順序｜Strategy 先行</h2>
+    <p>教材製作順序可以不同，但實際使用時，Strategy 應作為第一步：先決定服務誰、內容主線與轉化路徑，再進入 Hook / Script / CTA / Stories。</p>
+  </div>
+  <div class="order-grid">
+    <a class="order-card step-1" href="https://linshengtang.github.io/AK_Strategy_Master/AK_Strategy_Manual.html" target="_blank" rel="noopener">
+      <span class="step-no">01</span>
+      <h3>Strategy｜定位 / 受眾 / 內容主線 / 轉化路徑</h3>
+      <p>先決定你服務誰、用什麼角度進入、用哪些內容主線建立信任，並導向哪條低壓力變現路徑。</p>
+    </a>
+    <a class="order-card" href="https://linshengtang.github.io/AK_Hook_Master/AK_Hook_Manual.html" target="_blank" rel="noopener">
+      <span class="step-no">02</span>
+      <h3>Hook｜注意力截停 / 受眾篩選</h3>
+      <p>讓對的人在前幾秒停下來，並用承諾建立觀看理由。</p>
+    </a>
+    <a class="order-card" href="https://linshengtang.github.io/AK_Script_Master/AK_Script_Manual.html" target="_blank" rel="noopener">
+      <span class="step-no">03</span>
+      <h3>Script｜承諾兌現 / 留存 / 信任</h3>
+      <p>把 Hook 的承諾兌現，維持觀看，建立信任，並為 CTA 鋪路。</p>
+    </a>
+    <a class="order-card" href="https://linshengtang.github.io/AK_CTA_Master/AK_CTA_Manual.html" target="_blank" rel="noopener">
+      <span class="step-no">04</span>
+      <h3>CTA｜轉化承接 / 安全下一步</h3>
+      <p>用低壓、合規、可承接的下一步，把觀看導向行動。</p>
+    </a>
+    <a class="order-card" href="https://linshengtang.github.io/AK_Stories_Master/AK_Stories_Manual.html" target="_blank" rel="noopener">
+      <span class="step-no">05</span>
+      <h3>Stories｜信任加溫 / DM 前置橋接</h3>
+      <p>用短、輕、連續的內容承接看過你的人，累積信任並導向低壓互動或 DM。</p>
+    </a>
+    <a class="order-card" href="https://linshengtang.github.io/AK_Algorithm_Master/AK_Algorithm_Manual.html" target="_blank" rel="noopener">
+      <span class="step-no">06</span>
+      <h3>Algorithm｜平台規則 / 指標邊界</h3>
+      <p>理解平台分發與指標語言，但不把實務推論寫成官方公式。</p>
+    </a>
+    <a class="order-card" href="https://linshengtang.github.io/AK_Performance_Master/AK_Performance_Manual.html" target="_blank" rel="noopener">
+      <span class="step-no">07</span>
+      <h3>Performance｜數據診斷 / 下一支修正</h3>
+      <p>把發布後數據轉成診斷、決策與下一支內容的修正方向。</p>
+    </a>
+  </div>
+</section>
+<!-- /Hub v0.2.0 Learning Order Sync -->
+
+
 
     <section class="section">
       <h2>工作流總圖</h2>
@@ -279,10 +408,10 @@
     </section>
 
     <footer class="footer">
-      <p>AK Creator Monetization Hub v0.1.9｜定位：內容作戰入口與三工具導航，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
+      <p>AK Creator Monetization Hub v0.2.0｜定位：內容作戰入口與三工具導航，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
     </footer>
   
-<!-- Hub v0.1.9 Completed Modules Sync -->
+<!-- Hub v0.2.0 Completed Modules Sync -->
 <div class="module-card completed strategy-module">
   <h3>Stories｜信任加溫 / 日常觸點 / DM 前置橋接</h3>
   <p>不是亂發日常，而是用短、輕、連續的內容，承接看過你的人，累積信任，並在合適時導向低壓力互動或 DM。</p>
@@ -294,7 +423,7 @@
   <p class="small-note">Strategy 是上游裁決層，不是爆款公式，也不是演算法保證。</p>
   <a class="btn" href="https://linshengtang.github.io/AK_Strategy_Master/AK_Strategy_Manual.html" target="_blank" rel="noopener">開啟 Strategy Manual</a>
 </div>
-<!-- /Hub v0.1.9 Completed Modules Sync -->
+<!-- /Hub v0.2.0 Completed Modules Sync -->
 
 </main>
 </body>
