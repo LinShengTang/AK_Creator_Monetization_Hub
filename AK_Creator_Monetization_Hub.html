@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AK Creator Monetization Hub v0.2.0</title>
+  <title>AK Creator Monetization Hub v0.2.2</title>
   <style>
     :root{
       --bg:#0f172a;--panel:#111827;--card:#182235;--card2:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--line:#334155;
@@ -142,26 +142,65 @@
 }
 </style>
 
+
+<style>
+.module-status-v022{
+  margin:30px 0;
+  padding:22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.76);
+  border:1px solid rgba(148,163,184,.28);
+}
+.module-status-v022 .eyebrow{
+  margin:0 0 4px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#2563eb;
+}
+.module-status-v022 h2{
+  margin:0 0 8px;
+  font-size:26px;
+  letter-spacing:-.04em;
+}
+.module-status-v022 .section-head p:not(.eyebrow){
+  margin:0;
+  color:#64748b;
+  line-height:1.8;
+}
+.status-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:16px;
+}
+.status-card{
+  border-radius:18px;
+  padding:16px;
+  border:1px solid #d8dee9;
+  background:#f8fafc;
+}
+.status-card h3{margin:0 0 8px}
+.status-card p{margin:0;color:#64748b;line-height:1.75}
+.status-card.done{border-left:5px solid #16a34a}
+.status-card.building{border-left:5px solid #f59e0b}
+@media(max-width:840px){
+  .status-grid{grid-template-columns:1fr}
+}
+</style>
+
 </head>
 <body>
   <main class="wrap">
     <section class="hero">
-      <span class="badge">AK Creator Monetization Hub｜v0.2.0</span>
+      <span class="badge">AK Creator Monetization Hub｜v0.2.2</span>
       <h1>從題材、Hook、CTA、平台審計，到發布後數據回收的內容作戰入口</h1>
       <p>這不是爆款保證工具，而是一套降低內容犯錯率、提高內容命中率的工作流：先讓對的人停下來，再讓內容兌現承諾，最後用數據決定下一支影片該怎麼修。</p>
-      <div class="note"><strong>目前已完成核心模組：</strong>Strategy / Strategy / Hook / Script / CTA / Stories / Algorithm / Performance。<br>目前採三工具獨立架構：Hub 負責入口與教材導航；Screenwriter Pro 負責上游企劃與 ShotPackage；v6.5 Execution Core 負責下游生成與 Execution Result。</div>
+      <div class="note"><strong>目前已完成核心模組：</strong>Strategy / Hook / Script / CTA / Stories / Algorithm / Performance。<br>目前採三工具獨立架構：Hub 負責入口與教材導航；Screenwriter Pro 負責上游企劃與 ShotPackage；v6.5 Execution Core 負責下游生成與 Execution Result。</div>
     </section>
 
-<!-- Hub v0.2.0 Strategy Module -->
-<div class="module-card completed strategy-module">
-  <h3>Strategy｜定位 / 受眾 / 內容主線 / 轉化路徑</h3>
-  <p>在開始做 Hook、Script、CTA 之前，先決定你服務誰、用什麼角度進入、用哪些內容主線建立信任，並導向哪條低壓力變現路徑。</p>
-  <p class="small-note">Strategy 是上游裁決層，不是爆款公式，也不是演算法保證。</p>
-  <a class="btn" href="https://linshengtang.github.io/AK_Strategy_Master/AK_Strategy_Manual.html" target="_blank" rel="noopener">開啟 Strategy Manual</a>
-</div>
-
-
-    <section class="section">
+<section class="section">
       <h2>我現在卡在哪？先從這裡選</h2>
       <p class="sub">不用從頭讀教材，先選你的問題，再進對應工具。</p>
       <div class="quick">
@@ -172,7 +211,7 @@
       </div>
     </section>
 
-<!-- Hub v0.2.0 Learning Order Sync -->
+<!-- Hub v0.2.2 Learning Order Sync -->
 <section class="learning-order-v020">
   <div class="section-head">
     <p class="eyebrow">Recommended Learning Order</p>
@@ -205,7 +244,7 @@
       <h3>Stories｜信任加溫 / DM 前置橋接</h3>
       <p>用短、輕、連續的內容承接看過你的人，累積信任並導向低壓互動或 DM。</p>
     </a>
-    <a class="order-card" href="https://linshengtang.github.io/AK_Algorithm_Master/AK_Algorithm_Manual.html" target="_blank" rel="noopener">
+    <a class="order-card" href="https://linshengtang.github.io/AK_Algorithm/AK_Algorithm_Manual.html" target="_blank" rel="noopener">
       <span class="step-no">06</span>
       <h3>Algorithm｜平台規則 / 指標邊界</h3>
       <p>理解平台分發與指標語言，但不把實務推論寫成官方公式。</p>
@@ -217,7 +256,29 @@
     </a>
   </div>
 </section>
-<!-- /Hub v0.2.0 Learning Order Sync -->
+<!-- /Hub v0.2.2 Learning Order Sync -->
+
+<!-- Hub v0.2.2 Module Status Summary -->
+<section class="module-status-v022">
+  <div class="section-head">
+    <p class="eyebrow">Module Status</p>
+    <h2>教材狀態｜已完成 / 建構中</h2>
+    <p>Manual 的正式入口只放在上方 Recommended Learning Order，這裡只做狀態摘要，避免同一份教材重複出現多次。</p>
+  </div>
+  <div class="status-grid">
+    <div class="status-card done">
+      <h3>已完成核心教材</h3>
+      <p>Strategy / Hook / Script / CTA / Stories / Algorithm / Performance</p>
+    </div>
+    <div class="status-card building">
+      <h3>建構中核心教材</h3>
+      <p>Signal / Conversion / Execution</p>
+    </div>
+  </div>
+</section>
+<!-- /Hub v0.2.2 Module Status Summary -->
+
+
 
 
 
@@ -275,7 +336,7 @@
           <p class="muted">解決前三秒、受眾篩選、內容承諾與 Clickbait 邊界。主要用在 Screenwriter 的 Hook Check 與 Script 開頭。</p>
           <div class="tagrow"><span class="tag">前三秒</span><span class="tag">Stop Rate</span><span class="tag">Clickbait Guard</span></div>
           <div class="btns">
-            <a class="btn" href="https://linshengtang.github.io/AK_Hook_Master/AK_Hook_Manual.html" target="_blank">開啟 Hook Manual</a>
+            
             <a class="btn secondary" href="#tools">查看 Screenwriter 工具入口</a>
           </div>
         </article>
@@ -285,7 +346,7 @@
           <p class="muted">檢查 Hook 後的前 10 秒、承諾兌現、Trust Signal、Value Core、Gap Open 與 CTA 鋪陳。</p>
           <div class="tagrow"><span class="tag">Anchor Beat</span><span class="tag">Retention Dips</span><span class="tag">CTA Paving</span></div>
           <div class="btns">
-            <a class="btn" href="https://linshengtang.github.io/AK_Script_Master/AK_Script_Manual.html" target="_blank">開啟 Script Manual</a>
+            
             <a class="btn secondary" href="#tools">查看 Screenwriter 工具入口</a>
           </div>
         </article>
@@ -296,7 +357,7 @@
           <p class="muted">建立安全 CTA 四類、禁用語防呆、Hook → CTA 對齊，以及 CTA → DM → Offer 鏈路。</p>
           <div class="tagrow"><span class="tag">CTA Safety</span><span class="tag">DM Trigger</span><span class="tag">Engagement Bait Guard</span></div>
           <div class="btns">
-            <a class="btn" href="https://linshengtang.github.io/AK_CTA_Master/AK_CTA_Manual.html" target="_blank">開啟 CTA Manual</a>
+            
             <a class="btn secondary" href="#tools">查看 Screenwriter 工具入口</a>
           </div>
         </article>
@@ -306,7 +367,7 @@
           <p class="muted">用數據診斷器把 CTR、Retention、Viewers、DM Count 轉成下一支影片的修改決策。</p>
           <div class="tagrow"><span class="tag">數據診斷器</span><span class="tag">history_tracking v1.2</span><span class="tag">Meta 2026</span></div>
           <div class="btns">
-            <a class="btn" href="https://linshengtang.github.io/AK_Performance_Master/AK_Performance_Manual.html" target="_blank">開啟 Performance Manual</a>
+            
             <a class="btn secondary" href="#tools">查看 v6.5 History 入口</a>
           </div>
         </article>
@@ -316,7 +377,7 @@
           <p class="muted">區分 official、high_confidence、practical_inference，避免把平台功能、實務推論寫成官方加權。</p>
           <div class="tagrow"><span class="tag">source_claim_level</span><span class="tag">Algorithm Claim Audit</span><span class="tag">Paid / Organic</span></div>
           <div class="btns">
-            <a class="btn" href="https://linshengtang.github.io/AK_Algorithm/AK_Algorithm_Manual.html" target="_blank">開啟 Algorithm Manual</a>
+            
             <a class="btn secondary" href="#tools">查看審計工具入口</a>
           </div>
         </article>
@@ -345,17 +406,7 @@
       <div class="warnbox" style="margin-top:14px"><strong>橋接規則：</strong>Screenwriter Pro 匯出 <code>GPT_Prompt_Pro_ShotPackage.json</code>；v6.5 匯入 ShotPackage 後逐鏡生成，完成後匯出 <code>GPT_Prompt_Pro_ExecutionResult.json</code>；Performance / 教材工具再回收結果與發布數據做診斷。</div>
     </section>
 
-    <section class="section">
-      <h2>建構中核心教材</h2>
-      <p class="sub">已完成核心教材持續封存；建構中僅保留尚未完成模組。</p>
-      <div class="grid">
-        
-        
-        <div class="card third"><span class="status soon">Coming soon</span><h3>Signal</h3><p class="muted">題材訊號、搜尋詞、競品、趨勢與內容切入角度。</p></div>
-        <div class="card third"><span class="status soon">Coming soon</span><h3>Conversion</h3><p class="muted">DM、Offer、5 No's、信任、異議處理與成交前置。</p></div>
-        <div class="card third"><span class="status soon">Coming soon</span><h3>Execution</h3><p class="muted">週期化執行、回顧、任務拆解、紀錄與迭代節奏。</p></div>
-      </div>
-    </section>
+    
 
     <section class="section">
       <h2>Advanced Roadmap｜10 章完成後補強</h2>
@@ -408,22 +459,10 @@
     </section>
 
     <footer class="footer">
-      <p>AK Creator Monetization Hub v0.2.0｜定位：內容作戰入口與三工具導航，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
+      <p>AK Creator Monetization Hub v0.2.2｜定位：內容作戰入口與三工具導航，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
     </footer>
   
-<!-- Hub v0.2.0 Completed Modules Sync -->
-<div class="module-card completed strategy-module">
-  <h3>Stories｜信任加溫 / 日常觸點 / DM 前置橋接</h3>
-  <p>不是亂發日常，而是用短、輕、連續的內容，承接看過你的人，累積信任，並在合適時導向低壓力互動或 DM。</p>
-  <a class="btn" href="https://linshengtang.github.io/AK_Stories_Master/AK_Stories_Manual.html" target="_blank" rel="noopener">開啟 Stories Manual</a>
-</div>
-<div class="module-card completed strategy-module">
-  <h3>Strategy｜定位 / 受眾 / 內容主線 / 轉化路徑</h3>
-  <p>在開始做 Hook、Script、CTA 之前，先決定你服務誰、用什麼角度進入、用哪些內容主線建立信任，並導向哪條低壓力變現路徑。</p>
-  <p class="small-note">Strategy 是上游裁決層，不是爆款公式，也不是演算法保證。</p>
-  <a class="btn" href="https://linshengtang.github.io/AK_Strategy_Master/AK_Strategy_Manual.html" target="_blank" rel="noopener">開啟 Strategy Manual</a>
-</div>
-<!-- /Hub v0.2.0 Completed Modules Sync -->
+
 
 </main>
 </body>
