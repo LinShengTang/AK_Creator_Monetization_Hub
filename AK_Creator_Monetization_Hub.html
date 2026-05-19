@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AK Creator Monetization Hub v0.2.4</title>
+  <title>AK Creator Monetization Hub v0.3.0</title>
   <style>
     :root{
       --bg:#0f172a;--panel:#111827;--card:#182235;--card2:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--line:#334155;
@@ -190,11 +190,230 @@
 }
 </style>
 
+
+<style>
+.reinforcement-modules-v030{
+  margin:30px 0;
+  padding:22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.80);
+  border:1px solid rgba(148,163,184,.30);
+  box-shadow:0 12px 30px rgba(15,23,42,.08);
+}
+.reinforcement-modules-v030 .eyebrow{
+  margin:0 0 4px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#b45309;
+}
+.reinforcement-modules-v030 h2{
+  margin:0 0 8px;
+  font-size:26px;
+  letter-spacing:-.04em;
+}
+.reinforcement-modules-v030 .section-head p:not(.eyebrow){
+  margin:0;
+  color:#64748b;
+  line-height:1.8;
+}
+.reinforcement-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:14px;
+  margin-top:16px;
+}
+.reinforcement-card{
+  display:block;
+  text-decoration:none;
+  color:#172033;
+  border-radius:18px;
+  padding:16px;
+  background:#fffaf0;
+  border:1px solid #fed7aa;
+  border-left:6px solid #f59e0b;
+  transition:.18s ease;
+}
+.reinforcement-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 26px rgba(180,83,9,.14);
+}
+.reinforcement-card.locked{
+  background:#f8fafc;
+  border-color:#d8dee9;
+  border-left-color:#94a3b8;
+  pointer-events:none;
+}
+.reinforcement-card h3{
+  margin:0 0 8px;
+  font-size:18px;
+}
+.reinforcement-card p{
+  margin:0;
+  color:#64748b;
+  line-height:1.75;
+  font-size:14px;
+}
+.tag-done,.tag-next{
+  display:inline-block;
+  font-size:12px;
+  font-weight:900;
+  border-radius:999px;
+  padding:2px 9px;
+  margin-bottom:8px;
+}
+.tag-done{background:#dcfce7;color:#166534}
+.tag-next{background:#e2e8f0;color:#334155}
+@media(max-width:840px){
+  .reinforcement-grid{grid-template-columns:1fr}
+}
+</style>
+
+
+<style>
+.reinforcement-usage{
+  margin:16px 0;
+  padding:14px;
+  border-radius:18px;
+  background:#fff7ed;
+  border:1px solid #fed7aa;
+}
+.reinforcement-usage h3{
+  margin:0 0 10px;
+  font-size:18px;
+}
+.usage-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+.usage-grid div{
+  background:white;
+  border:1px solid #ffedd5;
+  border-radius:14px;
+  padding:12px;
+  line-height:1.6;
+}
+.usage-grid span{
+  color:#b45309;
+  font-weight:800;
+}
+@media(max-width:840px){
+  .usage-grid{grid-template-columns:1fr}
+}
+</style>
+
+
+<style>
+.main-workflow-v027{
+  margin:30px 0;
+  padding:22px;
+  border-radius:22px;
+  background:rgba(255,255,255,.90);
+  border:1px solid rgba(148,163,184,.32);
+  box-shadow:0 12px 30px rgba(15,23,42,.08);
+}
+.main-workflow-v027 .eyebrow{
+  margin:0 0 4px;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#2563eb;
+}
+.main-workflow-v027 h2{
+  margin:0 0 8px;
+  font-size:26px;
+  letter-spacing:-.04em;
+}
+.main-workflow-v027 .section-head p:not(.eyebrow){
+  margin:0;
+  color:#475569;
+  line-height:1.8;
+}
+.pipeline-flow{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  margin-top:16px;
+}
+.pipe-step{
+  background:#eff6ff;
+  border:1px solid #bfdbfe;
+  color:#1e3a8a;
+  border-radius:14px;
+  padding:10px 12px;
+  font-weight:900;
+  min-width:98px;
+  text-align:center;
+  line-height:1.25;
+}
+.pipe-step span{
+  display:block;
+  margin-top:3px;
+  color:#475569;
+  font-size:12px;
+  font-weight:700;
+}
+.pipe-arrow{
+  color:#2563eb;
+  font-weight:900;
+}
+.pipeline-note{
+  margin-top:16px;
+  padding:14px;
+  border-radius:16px;
+  background:#f8fafc;
+  border:1px solid #d8dee9;
+  color:#334155;
+  line-height:1.75;
+}
+.reinforcement-usage{
+  background:#ffffff !important;
+  border:2px solid #f59e0b !important;
+  box-shadow:0 8px 20px rgba(180,83,9,.10);
+}
+.reinforcement-usage h3{
+  color:#7c2d12 !important;
+}
+.usage-grid div{
+  background:#fff7ed !important;
+  border:1px solid #fdba74 !important;
+  color:#1f2937 !important;
+}
+.usage-grid strong{
+  color:#111827 !important;
+}
+.usage-grid span{
+  color:#9a3412 !important;
+  font-weight:900 !important;
+}
+@media(max-width:840px){
+  .pipeline-flow{display:grid;grid-template-columns:1fr}
+  .pipe-arrow{display:none}
+}
+</style>
+
+
+<style>
+.pipeline-clarity-note{
+  margin:12px 0 16px;
+  padding:12px 14px;
+  border-radius:14px;
+  background:#eef2ff;
+  border:1px solid #c7d2fe;
+  color:#1e3a8a;
+  line-height:1.7;
+}
+</style>
+
 </head>
 <body>
   <main class="wrap">
     <section class="hero">
-      <span class="badge">AK Creator Monetization Hub｜v0.2.4</span>
+      <span class="badge">AK Creator Monetization Hub｜v0.3.0</span>
       <h1>從題材、Hook、CTA、平台審計，到發布後數據回收的內容作戰入口</h1>
       <p>這不是爆款保證工具，而是一套降低內容犯錯率、提高內容命中率的工作流：先讓對的人停下來，再讓內容兌現承諾，最後用數據決定下一支影片該怎麼修。</p>
       <div class="note"><strong>目前已完成核心模組：</strong>Strategy / Signal / Hook / Script / CTA / Stories / Conversion / Algorithm / Performance / Execution。<br>目前採三工具獨立架構：Hub 負責入口與教材導航；Screenwriter Pro 負責上游企劃與 ShotPackage；v6.5 Execution Core 負責下游生成與 Execution Result。</div>
@@ -213,7 +432,7 @@
 
 
 
-<!-- Hub v0.2.4 Learning Order Sync -->
+<!-- Hub v0.3.0 Learning Order Sync -->
 <section class="learning-order-v020">
   <div class="section-head">
     <p class="eyebrow">Recommended Learning Order</p>
@@ -273,13 +492,13 @@
     </a>
   </div>
 </section>
-<!-- /Hub v0.2.4 Learning Order Sync -->
+<!-- /Hub v0.3.0 Learning Order Sync -->
 
 
 
 
 
-<!-- Hub v0.2.4 Module Status Summary -->
+<!-- Hub v0.3.0 Module Status Summary -->
 <section class="module-status-v022">
   <div class="section-head">
     <p class="eyebrow">Module Status</p>
@@ -293,11 +512,95 @@
     </div>
     <div class="status-card building">
       <h3>後續補強項目</h3>
-      <p>Profile Architecture / Value Ladder / DM Decision Tree / Visual Pattern Interrupt</p>
+      <p>Value Ladder / Visual Pattern Interrupt</p>
     </div>
   </div>
 </section>
-<!-- /Hub v0.2.4 Module Status Summary -->
+<!-- /Hub v0.3.0 Module Status Summary -->
+
+
+<!-- Hub v0.3.0 Main Workflow Overview -->
+<section class="main-workflow-v027">
+  <div class="section-head">
+    <p class="eyebrow">Content Strategy Pipeline</p>
+    <h2>內容作戰主線｜學習 / 策略流程</h2>
+    <p>這是教材與內容作戰的主線順序，回答「先想什麼、再做什麼」。補強模組不是主線步驟，而是在特定斷點發生時回頭修補。</p>
+  </div>
+  <div class="pipeline-flow">
+    <div class="pipe-step">Strategy<br><span>定方向</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Signal<br><span>選題材</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Hook<br><span>讓人停下</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Script<br><span>兌現承諾</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">CTA<br><span>導下一步</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Stories<br><span>信任加溫</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Conversion<br><span>DM 承接</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Algorithm<br><span>平台邊界</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Performance<br><span>數據診斷</span></div>
+    <div class="pipe-arrow">→</div>
+    <div class="pipe-step">Execution<br><span>持續運轉</span></div>
+  </div>
+  <div class="pipeline-note">
+    <strong>補強模組何時介入？</strong>
+    當主線流程跑完後發現漏點，例如主頁有人進但不私訊、DM 對話卡住、免費資源無法升級、開頭視覺留不住人，才使用下方補強模組。
+  </div>
+</section>
+<!-- /Hub v0.3.0 Main Workflow Overview -->
+
+<!-- Hub v0.3.0 Reinforcement Modules -->
+<section class="reinforcement-modules-v030">
+  <div class="section-head">
+    <p class="eyebrow">Reinforcement Modules</p>
+    <h2>補強模組｜主線外的關鍵斷點</h2>
+    <p>這些不是新的主線章節，也不是每天都要照順序讀。它們是「斷點修復工具」：主線流程先跑，發現漏點時才回頭使用對應補強模組。</p>
+  </div>
+  
+  <div class="reinforcement-usage">
+    <h3>什麼時候使用補強模組？</h3>
+    <div class="usage-grid">
+      <div><strong>主頁瀏覽高，但私訊 / 連結點擊低</strong><br><span>使用：主頁防漏</span></div>
+      <div><strong>DM 已讀不回、嫌貴、推託變多</strong><br><span>使用：DM 非線性決策樹</span></div>
+      <div><strong>有免費 / 低價入口，但無法升級後端服務</strong><br><span>使用：Value Ladder</span></div>
+      <div><strong>Hook 文案不差，但前 0.5 秒滑走率高</strong><br><span>使用：Visual Pattern Interrupt</span></div>
+    </div>
+  </div>
+
+  <div class="reinforcement-grid">
+    <a class="reinforcement-card" href="https://linshengtang.github.io/AK_Profile_Architecture/AK_Profile_Architecture_Manual.html" target="_blank" rel="noopener">
+      <span class="tag-done">已完成</span>
+      <h3>主頁防漏｜個人簡介 / 置頂內容 / 精選限動</h3>
+      <p>補上短影片或貼文之後，受眾點進主頁時的二次審查與承接層，避免冷流量在 Profile 流失。</p>
+    </a>
+
+    <a class="reinforcement-card" href="https://linshengtang.github.io/AK_DM_Decision_Tree/AK_Conversion_DM_Decision_Tree_Manual.html" target="_blank" rel="noopener">
+      <span class="tag-done">已完成</span>
+      <h3>DM 非線性決策樹｜已讀不回 / 嫌貴 / 推託應對</h3>
+      <p>補強 Conversion v1.0：當 DM 對話沒有照標準五步流程前進時，用安全、低壓的方式判斷下一步。</p>
+    </a>
+
+    <div class="reinforcement-card locked">
+      <span class="tag-next">待補強</span>
+      <h3>Value Ladder｜後端升級路徑</h3>
+      <p>補上免費資源、低價入口、中高客單服務之間的升級協議，避免只停在低價或免費轉化。</p>
+    </div>
+    
+    <div class="reinforcement-card locked">
+      <span class="tag-next">待補強</span>
+      <h3>Visual Pattern Interrupt｜視覺截停補丁</h3>
+      <p>補強 Hook：把前 0.5 秒視覺模式中斷、構圖、動作與首幀設計納入短影音開場。</p>
+    </div>
+  </div>
+</section>
+<!-- /Hub v0.3.0 Reinforcement Modules -->
+
+
 
 
 
@@ -306,8 +609,13 @@
 
 
     <section class="section">
-      <h2>工作流總圖</h2>
-      <p class="sub">Screenwriter Pro 負責上游企劃、審稿、分鏡與 ShotPackage；v6.5 Execution Core 負責下游生成、Shot Queue、History 與 Execution Result。</p>
+      <h2>工具執行流程｜Screenwriter → v6.5 → 發布回收</h2>
+      <p class="sub">這是工具操作流程：Screenwriter Pro 負責上游企劃、審稿、分鏡與 ShotPackage；v6.5 Execution Core 負責下游生成、Shot Queue、History 與 Execution Result。</p>
+<div class="pipeline-clarity-note">
+  <strong>兩張圖不是重複：</strong>
+  「內容作戰主線」是學習與策略順序；「工具執行流程」是實際操作 Screenwriter / v6.5 的工具順序。
+</div>
+
       <div class="card full">
         <div class="flow">
           <span class="step">Radar / Plan</span><span class="arrow">→</span>
@@ -442,7 +750,7 @@
         </article>
         <article class="card">
           <span class="status adv">Advanced</span>
-          <h3>Profile Conversion Protocol｜主頁轉化架構</h3>
+          <h3>Value Ladder / Visual Pattern Interrupt</h3>
           <p class="muted">補強 Bio、置頂三件套、LFA 入口與 Profile Visits → DM / Link Click 的二次審查漏斗。</p>
         </article>
         <article class="card">
@@ -482,7 +790,7 @@
     </section>
 
     <footer class="footer">
-      <p>AK Creator Monetization Hub v0.2.4｜定位：內容作戰入口與三工具導航，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
+      <p>AK Creator Monetization Hub v0.3.0｜定位：內容作戰入口與三工具導航，不構成任何平台流量保證或收益保證。所有策略仍需以帳號實測與平台最新政策為準。</p>
     </footer>
   
 
