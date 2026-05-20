@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AK Creator Monetization Hub v0.3.9.1｜Link Fix</title>
+  <title>AK Creator Monetization Hub v0.3.9.3｜Stable Filename Fix</title>
   <style>
     :root{
       --bg:#0f172a;--panel:#111827;--card:#182235;--card2:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--line:#334155;
@@ -605,7 +605,7 @@
 </style>
 
 <!-- AK_Hub_v0_3_9_Platform_Safety_Entry -->
-<!-- AK_Hub_v0_3_9_1_Link_Fix -->
+<!-- AK_Hub_v0_3_9_3_Stable_Filename_Fix -->
 </head>
 <body>
   <main class="wrap">
@@ -867,30 +867,55 @@
 <script>
 (function(){
   const map = [
-    ["Strategy","AK_Strategy_Manual.html"],["Signal","AK_Signal_Manual.html"],["Hook","AK_Hook_Manual.html"],
-    ["Script","AK_Script_Manual.html"],["CTA","AK_CTA_Manual.html"],["Stories","AK_Stories_Manual.html"],
-    ["Algorithm","AK_Algorithm_Manual.html"],["Performance","AK_Performance_Manual.html"],["Execution","AK_Execution_Manual.html"],
-    ["Platform Safety","AK_Platform_Safety_Manual.html"],["平台紅線","AK_Platform_Safety_Manual.html"],
-    ["DM 非線性決策樹","AK_Conversion_DM_Decision_Tree_Manual.html"],["DM Decision Tree","AK_Conversion_DM_Decision_Tree_Manual.html"]
+    ["Strategy","AK_Strategy_Manual.html"],
+    ["Signal","AK_Signal_Manual.html"],
+    ["Hook","AK_Hook_Manual.html"],
+    ["Script","AK_Script_Manual.html"],
+    ["CTA","AK_CTA_Manual.html"],
+    ["Stories","AK_Stories_Manual.html"],
+    ["Algorithm","AK_Algorithm_Manual.html"],
+    ["Performance","AK_Performance_Manual.html"],
+    ["Execution","AK_Execution_Manual.html"],
+    ["Platform Safety","AK_Platform_Safety_Manual.html"],
+    ["平台紅線","AK_Platform_Safety_Manual.html"],
+    ["DM 非線性決策樹","AK_Conversion_DM_Decision_Tree_Manual.html"],
+    ["DM Decision Tree","AK_Conversion_DM_Decision_Tree_Manual.html"]
   ];
+
+  function targetForText(txt){
+    for(const [key,url] of map){
+      if((txt||"").includes(key)) return url;
+    }
+    return null;
+  }
+
   function bind(){
-    document.querySelectorAll("a, .order-card, .module-card, .reinforcement-card, .card").forEach(el=>{
-      const txt=(el.textContent||"").trim();
-      const isA=(el.tagName||"").toLowerCase()==="a";
-      map.forEach(([key,url])=>{
-        if(txt.includes(key)){
-          if(isA){
-            const h=el.getAttribute("href");
-            if(!h || h==="#" || h==="javascript:void(0)") el.setAttribute("href",url);
-          }else if(!el.querySelector("a")){
-            el.style.cursor="pointer";
-            el.onclick=function(){ window.open(url,"_blank"); };
-          }
+    document.querySelectorAll("a").forEach(a=>{
+      const url = targetForText(a.textContent || "");
+      if(url){
+        const h = a.getAttribute("href");
+        if(!h || h === "#" || h === "javascript:void(0)" || h.includes("_Safety_") || h.includes("_Display_Fix") || h.includes("v1_2_Safety")){
+          a.setAttribute("href", url);
+          a.setAttribute("target","_blank");
         }
-      });
+      }
+    });
+
+    document.querySelectorAll(".order-card, .module-card, .reinforcement-card, .status-card, .card").forEach(el=>{
+      if(el.closest("a")) return;
+      const url = targetForText(el.textContent || "");
+      if(url && !el.querySelector("a[href]")){
+        el.style.cursor = "pointer";
+        el.setAttribute("role","link");
+        el.addEventListener("click", function(e){
+          if(e.target && e.target.closest && e.target.closest("a,button")) return;
+          window.open(url, "_blank");
+        });
+      }
     });
   }
-  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",bind); else bind();
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", bind);
+  else bind();
 })();
 </script>
 
