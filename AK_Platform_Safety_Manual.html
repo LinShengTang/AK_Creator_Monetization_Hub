@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AK Platform Safety Manual｜平台紅線與內容安全守門</title>
+<style>
+:root{
+  --bg:#101827;--paper:#f8fafc;--paper2:#eef2ff;--ink:#142033;--muted:#64748b;--line:#d8dee9;
+  --blue:#2563eb;--cyan:#0891b2;--green:#15803d;--amber:#b45309;--red:#b91c1c;--purple:#7c3aed;
+  --shadow:0 18px 48px rgba(15,23,42,.18);--radius:20px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:"Noto Sans TC","Microsoft JhengHei",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--ink);line-height:1.78;
+  background:radial-gradient(circle at 7% 0%,rgba(185,28,28,.22),transparent 30%),
+             radial-gradient(circle at 92% 10%,rgba(37,99,235,.18),transparent 32%),
+             linear-gradient(135deg,#fff7ed,#f8fafc 46%,#e0f2fe);
+}
+body:before{content:"";position:fixed;inset:0;opacity:.18;pointer-events:none;background-image:linear-gradient(rgba(15,23,42,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.05) 1px,transparent 1px);background-size:30px 30px}
+nav{position:sticky;top:0;z-index:30;background:rgba(15,23,42,.94);backdrop-filter:blur(14px);color:#fff;border-bottom:3px solid var(--red)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;gap:8px;align-items:center;padding:10px 18px;overflow-x:auto}.logo{font-weight:900;white-space:nowrap;margin-right:10px}.badge{font-size:12px;padding:3px 9px;border-radius:999px;background:var(--red);font-weight:800;white-space:nowrap}
+nav a{color:#fee2e2;text-decoration:none;font-size:13px;padding:7px 9px;border-radius:999px;white-space:nowrap}nav a:hover{background:rgba(255,255,255,.1);color:#fff}
+.wrap{max-width:1200px;margin:0 auto;padding:34px 18px 84px;position:relative}
+.hero{padding:46px 36px;border-radius:32px;background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(254,242,242,.90));box-shadow:var(--shadow);border:1px solid rgba(185,28,28,.22);margin-bottom:24px;position:relative;overflow:hidden}
+.kicker{font-size:13px;color:var(--red);font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(34px,6vw,64px);line-height:1.04;margin:12px 0 14px;letter-spacing:-.06em;color:#0f172a}.hero p{font-size:18px;color:#475569;max-width:900px;margin:0}
+.callout{margin-top:22px;border-left:5px solid var(--red);background:rgba(185,28,28,.08);padding:16px 18px;border-radius:16px;color:#7f1d1d;font-weight:800}
+.section{margin-top:36px}.section h2{font-size:30px;margin:0 0 8px;letter-spacing:-.04em;color:#0f172a}.section-desc{margin:0 0 16px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}.card{grid-column:span 6;background:rgba(255,255,255,.94);border:1px solid rgba(148,163,184,.32);border-radius:var(--radius);padding:22px;box-shadow:0 12px 28px rgba(15,23,42,.08)}.card.full{grid-column:span 12}.card.third{grid-column:span 4}.card.quarter{grid-column:span 3}
+.good{border-left:5px solid var(--green)}.warn{border-left:5px solid var(--red)}.blue{border-left:5px solid var(--blue)}.amber{border-left:5px solid var(--amber)}.purple{border-left:5px solid var(--purple)}
+h3{font-size:20px;margin:0 0 10px;color:#0f172a}ul{margin:8px 0;padding-left:22px}li{margin:5px 0}.small{font-size:13px;color:var(--muted)}
+.table-wrap{overflow-x:auto;border-radius:18px;border:1px solid var(--line);background:#fff;margin-top:12px}table{width:100%;border-collapse:collapse;min-width:820px;background:#fff}th,td{padding:12px 14px;border-bottom:1px solid #e2e8f0;text-align:left;vertical-align:top;font-size:14px}th{background:#fee2e2;color:#7f1d1d;font-weight:900;white-space:nowrap}tr:last-child td{border-bottom:none}
+.code{background:#0f172a;color:#fee2e2;border-radius:14px;padding:15px;overflow-x:auto;font-family:"JetBrains Mono","Consolas",monospace;font-size:13px;line-height:1.7}
+.pillrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.pill{font-size:12px;font-weight:800;color:#7f1d1d;background:#fee2e2;border:1px solid #fecaca;padding:5px 9px;border-radius:999px}
+.footer{margin-top:48px;padding:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media(max-width:900px){.card,.card.third,.card.quarter{grid-column:span 12}.hero{padding:30px 22px}}
+@media print{nav{display:none}body{background:#fff}body:before{display:none}.hero,.card{box-shadow:none}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner">
+  <div class="logo">AK Creator Monetization</div><div class="badge">Platform Safety</div>
+  <a href="#definition">定位</a><a href="#redlines">五大紅線</a><a href="#mapping">章節對應</a><a href="#dosdonts">可用 / 禁用</a><a href="#teaching">老師教學</a>
+</div></nav>
+<main class="wrap">
+<section class="hero">
+  <div class="kicker">AK Platform Safety Layer v1.0</div>
+  <h1>平台紅線不是演算法技巧，<br>是內容能不能安全被看見的前置 Gate。</h1>
+  <p>本手冊是橫向安全守門模組，跨越 Hook、Script、CTA、Stories、Performance、Execution 與 DM。它不承諾爆紅，也不把個人經驗包裝成官方規則；它只幫老師與學員在內容發布前避開高風險紅線。</p>
+  <div class="callout">硬規則：凡是無法確認來源的比例、封號機率、平台心理推測，一律不得標為 official。可作風險提醒，但必須降級為 practical_inference 或 unsupported。</div>
+</section>
+
+<section class="section" id="definition">
+  <h2>1. Safety Layer 是什麼？</h2>
+  <div class="grid">
+    <div class="card good"><h3>一句話定義</h3><p>Platform Safety Layer 是內容發布前的安全檢查層，用來排除版權、誤導、虛假互動、危險導流與社群準則風險。</p></div>
+    <div class="card blue"><h3>它不是什麼</h3><ul><li>不是演算法公式</li><li>不是流量保證</li><li>不是封號機率預測</li><li>不是平台官方法律意見</li></ul></div>
+    <div class="card full amber"><h3>AK 寫作邊界</h3><div class="code">Safety Check = Copyright × Claim Truth × Engagement Integrity × Link Transparency × Community Guideline Risk</div><p class="small">此為 AK 教學框架。涉及平台政策時，請回到官方文件確認；涉及法律爭議時，需尋求專業法律意見。</p></div>
+  </div>
+</section>
+
+<section class="section" id="redlines">
+  <h2>2. 五大平台紅線</h2>
+  <p class="section-desc">以下是可納入教學的安全分類；它們是發布前 Gate，不是流量公式。</p>
+  <div class="grid">
+    <div class="card warn"><h3>① Copyright / 素材授權</h3><ul><li>不搬運他人影片</li><li>不隨意使用影視、音樂、動漫片段</li><li>BGM、圖片、影片素材需確認授權</li><li>AI 生成素材也需避免仿冒特定 IP / 真人 / 品牌</li></ul></div>
+    <div class="card warn"><h3>② Misleading Claim / 誤導承諾</h3><ul><li>標題、縮圖、第一句的承諾，內容必須兌現</li><li>不得無證據承諾月入、漲粉、保證成效</li><li>不得把 practical_inference 寫成 official</li></ul></div>
+    <div class="card warn"><h3>③ Fake Engagement / 虛假互動</h3><ul><li>不買粉、不買讚、不買播放</li><li>不互刷、不互讚、不垃圾留言</li><li>不使用留言+1、按讚解鎖、分享換獎等機械誘導</li></ul></div>
+    <div class="card warn"><h3>④ External Link / 站外連結風險</h3><ul><li>不得用誤導方式把人導離平台</li><li>不得導向不透明群組、詐騙、違規或不安全頁面</li><li>DM / 私域承接需透明、低壓、保留選擇權</li></ul></div>
+    <div class="card full warn"><h3>⑤ Community Safety / 社群安全</h3><ul><li>避免仇恨、暴力、危險、自傷、恐怖、色情低俗等高風險內容</li><li>敏感議題若非必要，不作戲謔、煽動或誇大包裝</li><li>新手教學階段，建議先遠離高政策摩擦題材</li></ul></div>
+  </div>
+</section>
+
+<section class="section" id="mapping">
+  <h2>3. 對應到 AK 各章節</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>章節</th><th>Safety 補丁</th><th>老師應提醒</th></tr></thead>
+      <tbody>
+        <tr><td>Strategy</td><td>Platform Fit Safety</td><td>定位與轉化路徑要先避開高政策摩擦與高版權依賴。</td></tr>
+        <tr><td>Signal</td><td>Topic Risk Filter</td><td>選題雷達要排除搬運、敏感、無證據承諾與高爭議題材。</td></tr>
+        <tr><td>Hook</td><td>Promise Match Safety</td><td>吸引力不是欺騙；Hook 的承諾，Script 要兌現。</td></tr>
+        <tr><td>Script</td><td>Claim Delivery Guard</td><td>腳本不能空泛、不能用未驗證數字堆疊信任。</td></tr>
+        <tr><td>CTA</td><td>Platform Risk Guard</td><td>CTA 不得變成互動誘餌、垃圾留言或高壓導流。</td></tr>
+        <tr><td>Stories / DM</td><td>Conversation Safety</td><td>限動與 DM 是信任加溫，不是強迫銷售。</td></tr>
+        <tr><td>Execution</td><td>Asset Safety Check</td><td>生成前確認素材授權、來源紀錄、音樂與 IP 風險。</td></tr>
+        <tr><td>Performance</td><td>Platform Risk Post-check</td><td>掉量不一定是演算法問題，先排查紅線與警告。</td></tr>
+        <tr><td>Algorithm</td><td>Safety Gate</td><td>推薦系統前面還有政策、版權、真實性與使用者安全 Gate。</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section" id="dosdonts">
+  <h2>4. 可用寫法 vs 禁止寫法</h2>
+  <div class="grid">
+    <div class="card good"><h3>可用</h3><ul><li>「這 3 個檢查點可以幫你判斷內容卡在哪裡。」</li><li>「我觀察到新手常把流量問題歸因於平台，但第一句也需要檢查。」</li><li>「如果你也不知道卡在哪一步，可以先從第一句開始檢查。」</li></ul></div>
+    <div class="card warn"><h3>禁用 / 高風險</h3><ul><li>「照做 3 天漲粉 1000。」</li><li>「留言 +1 領取爆款公式。」</li><li>「平台不推你是因為你沒用這個秘密。」</li><li>「保證月入過萬。」</li></ul></div>
+  </div>
+</section>
+
+<section class="section" id="teaching">
+  <h2>5. 老師教學用法</h2>
+  <div class="grid">
+    <div class="card blue"><h3>2 小時入口課</h3><p>放在前 20 分鐘，作為「先避雷，再做內容」的安全框架。不要講太深，只讓學員知道：吸引力不能建立在誤導、侵權或假互動上。</p></div>
+    <div class="card purple"><h3>12 小時陪跑班</h3><p>放在 Script / CTA 週與 Performance 回收週。學員內容沒流量時，先判斷是否有安全 Gate 問題，再談 Hook / Retention。</p></div>
+    <div class="card full amber"><h3>Source Claim Level</h3><div class="code">official：平台官方文件
+high_confidence：官方方向 + 多來源一致
+practical_inference：實務推論 / 教學建議
+first_party_framework：AK 自有框架
+unsupported：沒有證據，不採納為事實</div></div>
+  </div>
+</section>
+
+<div class="footer">AK Platform Safety Manual v1.0｜平台安全紅線守門層。本文是教學與風險管理框架，不構成法律意見、平台官方保證或營收承諾。</div>
+</main>
+</body>
+</html>
