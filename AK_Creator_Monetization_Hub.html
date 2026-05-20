@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AK Creator Monetization Hub v0.3.9.3｜Stable Filename Fix</title>
+  <title>AK Creator Monetization Hub v0.3.9.4｜Hard Link Fix</title>
   <style>
     :root{
       --bg:#0f172a;--panel:#111827;--card:#182235;--card2:#0b1220;--text:#e5e7eb;--muted:#94a3b8;--line:#334155;
@@ -606,6 +606,7 @@
 
 <!-- AK_Hub_v0_3_9_Platform_Safety_Entry -->
 <!-- AK_Hub_v0_3_9_3_Stable_Filename_Fix -->
+<!-- AK_Hub_v0_3_9_4_Hard_Link_Fix -->
 </head>
 <body>
   <main class="wrap">
@@ -635,12 +636,16 @@
       <span class="step-no">01</span>
       <h3>Strategy｜定位 / 受眾 / 內容主線 / 轉化路徑</h3>
       <p>先決定你服務誰、用什麼定位切入、有哪些內容主線，以及最終導向哪條低壓力變現路徑。主要用在所有內容開始前的方向裁決。</p>
-    </div>
-    <a class="order-card" href="AK_Signal_Manual.html" target="_blank" rel="noopener">
+    
+<div class="btns"><a class="btn" href="AK_Strategy_Manual.html" target="_blank">開啟</a></div>
+</div>
+    <a class="order-card" href="AK_Script_Manual.html" target="_blank" rel="noopener">
       <span class="step-no">02</span>
       <h3>Signal｜題材判斷 / 選題系統</h3>
       <p>判斷什麼題材值得做，什麼只是噪音。主要用在把留言、搜尋、私訊、競品與後台數據轉成可執行選題。</p>
-    </div>
+    
+<div class="btns"><a class="btn" href="AK_Signal_Manual.html" target="_blank">開啟</a></div>
+</div>
     <a class="order-card" href="AK_Hook_Manual.html" target="_blank" rel="noopener">
       <span class="step-no">03</span>
       <h3>Hook｜讓對的人停下來</h3>
@@ -754,7 +759,7 @@
 <h3>Value Ladder｜後端價值梯隊 / 升級路徑</h3>
       <p>補上免費資源、低價入口、中價解法、高價值後端之間的安全升級路徑與第 0 / 3 / 7 / 14 天追蹤協議。</p>
     </a>
-    <a class="reinforcement-card" href="https://linshengtang.github.io/AK_Visual_Pattern_Interrupt/AK_Visual_Pattern_Interrupt_Manual.html" target="_blank" rel="noopener">
+    <a class="reinforcement-card" href="AK_Hook_Manual.html" target="_blank" rel="noopener">
 <h3>Visual Pattern Interrupt｜前 0.5 秒視覺截停</h3>
       <p>補強 Hook：把文字開場轉成第一幀畫面、第一個動作與視覺中斷，降低觀眾還沒讀到 Hook 就滑走的機率。</p>
     </a>
@@ -802,7 +807,13 @@
           <span class="step">Execution Result</span><span class="arrow">→</span>
           <span class="step">Publish</span><span class="arrow">→</span>
           <span class="step">Performance Review</span>
-        </div>
+        
+<div class="btns"><a class="btn" href="AK_Algorithm_Manual.html" target="_blank">開啟</a>
+<div class="btns"><a class="btn" href="AK_Performance_Manual.html" target="_blank">開啟</a>
+<div class="btns"><a class="btn" href="AK_Execution_Manual.html" target="_blank">開啟</a></div>
+</div>
+</div>
+</div>
       </div>
     </section>
 
@@ -847,7 +858,9 @@
         <span class="tag">Fake Engagement</span>
         <span class="tag">External Link Risk</span>
         <span class="tag">Community Safety</span>
-      </div>
+      
+<div class="btns"><a class="btn" href="AK_Platform_Safety_Manual.html" target="_blank">開啟</a></div>
+</div>
       <div class="btns">
         <a class="btn" href="AK_Platform_Safety_Manual.html" target="_blank">開啟 Platform Safety Manual</a>
       </div>
@@ -864,6 +877,7 @@
 <!-- /Hub v0.3.8 Official Footer -->
 </main>
 
+
 <script>
 (function(){
   const map = [
@@ -879,43 +893,35 @@
     ["Platform Safety","AK_Platform_Safety_Manual.html"],
     ["平台紅線","AK_Platform_Safety_Manual.html"],
     ["DM 非線性決策樹","AK_Conversion_DM_Decision_Tree_Manual.html"],
+    ["已讀不回","AK_Conversion_DM_Decision_Tree_Manual.html"],
     ["DM Decision Tree","AK_Conversion_DM_Decision_Tree_Manual.html"]
   ];
-
-  function targetForText(txt){
-    for(const [key,url] of map){
-      if((txt||"").includes(key)) return url;
-    }
+  function pick(txt){
+    txt = txt || "";
+    for(const item of map){ if(txt.includes(item[0])) return item[1]; }
     return null;
   }
-
-  function bind(){
+  function run(){
     document.querySelectorAll("a").forEach(a=>{
-      const url = targetForText(a.textContent || "");
+      const url = pick(a.textContent);
       if(url){
-        const h = a.getAttribute("href");
-        if(!h || h === "#" || h === "javascript:void(0)" || h.includes("_Safety_") || h.includes("_Display_Fix") || h.includes("v1_2_Safety")){
-          a.setAttribute("href", url);
-          a.setAttribute("target","_blank");
-        }
+        a.href = url;
+        a.target = "_blank";
       }
     });
-
-    document.querySelectorAll(".order-card, .module-card, .reinforcement-card, .status-card, .card").forEach(el=>{
-      if(el.closest("a")) return;
-      const url = targetForText(el.textContent || "");
-      if(url && !el.querySelector("a[href]")){
-        el.style.cursor = "pointer";
-        el.setAttribute("role","link");
-        el.addEventListener("click", function(e){
-          if(e.target && e.target.closest && e.target.closest("a,button")) return;
-          window.open(url, "_blank");
-        });
-      }
+    document.querySelectorAll(".order-card,.reinforcement-card,.module-card,.status-card").forEach(card=>{
+      if(card.closest("a")) return;
+      const url = pick(card.textContent);
+      if(!url) return;
+      card.style.cursor = "pointer";
+      card.onclick = function(e){
+        if(e.target.closest("a,button")) return;
+        window.open(url,"_blank");
+      };
     });
   }
-  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", bind);
-  else bind();
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",run);
+  else run();
 })();
 </script>
 
